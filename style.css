@@ -1,0 +1,141 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    background-color: slateblue;
+}
+*{
+    box-sizing: border-box;
+}
+.question-container{
+    background-color: beige;
+    max-width: 700px;
+    min-height: 550px;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+.question-container::before, .question-container::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+.question-number h3{
+    color:blue;
+    font-size: 28px;
+    border-bottom: 1px solid slategray;
+    padding-bottom: 10px;
+}
+.question{
+    font-size: 24px;
+    color: black;
+    padding-bottom: 10px;
+}
+.options div{
+    background-color: lightslategray;
+    color: black;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.button button{
+    background-color:slateblue;
+    color: cornsilk;
+    padding: 10px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.button{
+    border-bottom: 1px solid slategray;
+}
+.options div.correct{
+    z-index: 1;
+    color: cornsilk;
+}
+.options div.correct::before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color:green;
+    z-index: -1;
+}
+.options div.wrong{
+    z-index: 1;
+    color: cornsilk;
+}
+.options div.disabled{
+    pointer-events: none;
+}
+.options div.wrong::before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color:red;
+    z-index: -1;
+}
+.answer-tracker{
+    margin-top: 20px;
+}
+.answer-tracker div{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: grey;
+    margin-right: 10px;
+    display: inline-block;
+}
+.answer-tracker div.correct{
+    background-color: green;
+}
+.answer-tracker div.wrong{
+    background-color: red;
+}
+.quiz-over{
+    position:fixed;
+    background-color: black;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.quiz-over.show{
+    display: flex;
+}
+.quiz-over .box{
+    padding: 30px;
+    background-color: lightseagreen;
+    color:white;
+    text-align: center;
+    max-width: 700px;
+    flex-basis: 700px;
+    border-radius: 10px;
+}
+.quiz-over .box h1{
+    font-size: 36px;
+    margin: 0 0 20px;
+    padding: 10px;
+}
+.quiz-over .box button{
+    padding: 15px 50px;
+    border-radius: 5px;
+    color: white;
+    background-color: tomato;
+    font-size: 18px;
+    margin: 15px 0 15px;
+}
